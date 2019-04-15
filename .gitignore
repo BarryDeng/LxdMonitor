@@ -3,3 +3,5 @@ client.crt
 
 web/public/data/*
 web/.idea/*
+
+*.pyc
