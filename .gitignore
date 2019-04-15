@@ -1,0 +1,5 @@
+client.key
+client.crt
+
+web/public/data/*
+web/.idea/*

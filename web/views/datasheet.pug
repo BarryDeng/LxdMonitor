@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= serverIP
+  table(data-toggle='table', data-url=data_url)
+    thead
+      tr
+        != datasheet
+  script(src='/javascripts/table.js')

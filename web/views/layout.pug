@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-table.min.css')
+  body
+    div(class='container')
+      nav(class='navbar navbar-expand-lg navbar-light bg-light')
+        a(class='navbar-brand')= title
+        button(class="navbar-toggler", type="button", data-toggle="collapse", data-target="#navbarNavAltMarkup", aria-controls="navbarNavAltMarkup", aria-expanded="false", aria-label="Toggle navigation")
+          span(class="navbar-toggler-icon")
+        div(class="collapse navbar-collapse", id="navbarNavAltMarkup")
+          div(class="navbar-nav")
+            a(class="nav-item nav-link active", href="/status", onclick='query("status")') Status<span class="sr-only">(current)</span>
+            a(class="nav-item nav-link", href="/containers", onclick='query("containers")') Containers
+            a(class="nav-item nav-link", href="/networks", onclick='query("networks")') Networks
+            a(class="nav-item nav-link", href="/images", onclick='query("images")') Images
+            a(class="nav-item nav-link", href="/profiles", onclick='query("profiles")') Profiles
+        form(class="form-inline")
+          label(for="serverIP", class="mr-sm-2 mr-form-label") Server IP
+          select(class="form-control mr-sm-2", id="serverIP")
+            option 192.168.31.11
+            option 192.168.31.12
+            option 192.168.31.13
+      block content
+      script(src='/javascripts/jquery.min.js')
+      script(src='/javascripts/popper.min.js')
+      script(src='/javascripts/bootstrap.min.js')
+      script(src='/javascripts/bootstrap-table.min.js')
+      script(src='/javascripts/main.js')
+
