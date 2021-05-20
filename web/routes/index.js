@@ -20,7 +20,8 @@ router.post('/query', function(req, res, next) {
       { json: msg },
       function (error, response, body) {
         if (!error && response.statusCode === 200) {
-            fs.writeFile(path.join("public", "data", msg.ip + "-" + msg.command), JSON.stringify(body), err => { if (err) console.log(err); });
+            console.log(JSON.stringify(body['result']))
+            fs.writeFile(path.join("public", "data", msg.ip + "-" + msg.command), JSON.stringify(body['result']), err => { if (err) console.log(err); });
         }
       });
   res.send("OK");
